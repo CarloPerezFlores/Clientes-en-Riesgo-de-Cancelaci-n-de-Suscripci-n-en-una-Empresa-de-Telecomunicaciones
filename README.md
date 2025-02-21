@@ -1,4 +1,4 @@
-# Clientes-con-riesgo-de-cancelaci-n-de-suscripci-n
+# Clientes-con-riesgo-de-cancelacion-de-suscripcion
 Modelo predictivo con el objetivo de identificar clientes que probablemente cancelen su suscripción a un servicio de telecomunicaciones.
 
 El proyecto se centra en la detección de clientes en riesgo de cancelar su suscripción a un servicio de telecomunicaciones. Se desarrolló un modelo predictivo utilizando técnicas de aprendizaje automático para identificar patrones en los datos de clientes que podrían indicar una posible cancelación.
