@@ -86,3 +86,25 @@ Model results depend on the dataset, data quality, and evaluation methodology. R
 ## Project Outcome
 
 This project demonstrates how predictive modeling can support customer risk segmentation and the design of measurable retention strategies. It connects model evaluation with business decision-making and Customer Experience improvement opportunities.
+
+## Power BI Dashboard
+
+### 1. Customer Churn Risk Overview
+
+Executive overview of customer churn risk, including key performance indicators, risk segmentation, observed churn rates, and average monthly charges by risk segment.
+
+![Customer Churn Risk Overview](Images/Customer_Churn_Risk_Overview.png)
+
+### 2. Customer Retention Action Plan
+
+Retention strategy view combining prioritized customer segments, recommended actions, key predictive drivers, and observed churn rates by internet service.
+
+![Customer Retention Action Plan](Images/Customer_Retention_Action_Plan.png)
+
+## Project Deliverables
+
+- **Jupyter Notebook:** data preparation, exploratory analysis, model training, evaluation, and customer risk segmentation.
+- **Power BI Dashboard (.pbix):** interactive visualization of churn risk, customer segments, and retention recommendations.
+- **Dashboard Screenshots:** visual documentation of the two Power BI report pages.
+
+The dashboard supports analytical exploration and retention planning. Recommended interventions require operational validation before implementation and measurement of business impact.
