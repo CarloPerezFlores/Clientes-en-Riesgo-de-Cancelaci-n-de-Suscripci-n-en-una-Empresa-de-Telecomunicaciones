@@ -1,12 +1,88 @@
-# Clientes-con-riesgo-de-cancelacion-de-suscripcion
-Modelo predictivo con el objetivo de identificar clientes que probablemente cancelen su suscripción a un servicio de telecomunicaciones.
+# Customer Churn Prediction & Customer Experience Analytics
 
-El proyecto se centra en la detección de clientes en riesgo de cancelar su suscripción a un servicio de telecomunicaciones. Se desarrolló un modelo predictivo utilizando técnicas de aprendizaje automático para identificar patrones en los datos de clientes que podrían indicar una posible cancelación.
+## Project Overview
 
-El código implementado incluye un análisis exploratorio detallado y un preprocesamiento robusto de los datos, utilizando múltiples modelos de clasificación como Regresión Logística, Random Forest, LGBM y Gradient Boosting. Se optimizaron los hiperparámetros mediante RandomizedSearchCV y se evaluaron los modelos utilizando métricas clave como precisión, F1 y ROC AUC.
+Predictive analytics project focused on identifying customers at risk of cancelling their telecommunications subscriptions and translating model outputs into actionable customer retention strategies.
 
-Los resultados mostraron que la Regresión Logística fue el modelo más efectivo, alcanzando una métrica ROC AUC de 0.75 y una exactitud de 0.74 en el conjunto de prueba. Esto sugiere que el modelo tiene una buena capacidad para distinguir entre clientes que cancelan y los que no.
+The project combines exploratory data analysis, machine learning, customer risk segmentation, and business recommendations to support data-driven retention decisions.
 
-Se puede inferir que, aunque la Regresión Logística se destacó, otros modelos como Gradient Boosting también mostraron un rendimiento sólido, lo que indica que hay características en los datos que pueden ser capturadas eficazmente por modelos más complejos. Estos hallazgos permiten a la empresa implementar estrategias de retención más efectivas, dirigiendo esfuerzos específicos hacia los clientes en riesgo de cancelación.
+## Business Objective
 
-Uno de los aspectos más complejos del código para mi fue la implementación de la técnica de sobremuestreo SMOTE para abordar el desbalanceo en las clases, lo que requiere un entendimiento profundo de cómo afecta a la calidad del modelo. Realizar este tipo de proyectos es emocionante porque combina análisis de datos, modelado predictivo y la oportunidad de impactar directamente en la estrategia empresarial, mejorando la retención de clientes y, en última instancia, la rentabilidad de la empresa.
+Identify customer profiles associated with subscription cancellation, estimate churn risk, and prioritize potential retention interventions using predictive analytics.
+
+## Methodology
+
+- **Data preparation:** integrated four customer datasets covering contracts, personal information, internet services, and phone services.
+- **Exploratory data analysis:** examined customer characteristics and churn patterns.
+- **Feature engineering and preprocessing:** prepared numerical and categorical variables, handled missing values, and encoded categorical features.
+- **Machine learning:** trained and compared a Dummy baseline, Logistic Regression, and Random Forest.
+- **Model evaluation:** assessed performance using accuracy, precision, recall, F1-score, ROC-AUC, a confusion matrix, and evaluation curves.
+- **Risk prioritization:** grouped customers into lower-, medium-, and higher-risk segments based on predicted churn probabilities.
+- **Customer Experience strategy:** translated predictive findings into retention actions and KPIs for further testing.
+
+## Model Results
+
+The Random Forest model achieved the strongest ROC-AUC among the evaluated models.
+
+| Model | Accuracy | Precision | Recall | F1-score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Random Forest | 0.792 | 0.587 | 0.730 | 0.651 | 0.862 |
+| Logistic Regression | 0.756 | 0.526 | 0.807 | 0.637 | 0.851 |
+| Dummy baseline | 0.735 | 0.000 | 0.000 | 0.000 | 0.500 |
+
+Random Forest was selected based on ROC-AUC. Logistic Regression achieved higher recall, making it a relevant alternative when identifying as many customers at risk of cancellation as possible is a priority.
+
+## Customer Risk Segmentation
+
+The Random Forest model's test-set predictions produced the following risk segments:
+
+| Risk segment | Customers | Observed churn rate |
+|---|---:|---:|
+| Lower | 833 | 5.0% |
+| Medium | 487 | 28.3% |
+| Higher | 441 | 65.1% |
+
+The higher-risk segment had a substantially higher observed churn rate than the lower-risk segment. This supports investigating targeted retention interventions, subject to operational validation.
+
+## Key Predictive Drivers
+
+Permutation importance identified the following leading predictors:
+
+1. Contract type
+2. Total charges
+3. Start date
+4. Monthly charges
+5. Internet service
+
+These variables describe predictive associations, not proven causes of customer cancellation.
+
+## Customer Experience Recommendations
+
+- Analyze churn rates by contract type and identify priority customer segments.
+- Pilot proactive retention outreach for customers classified as high risk.
+- Review pricing communication and perceived value among at-risk customers.
+- Monitor churn rate, save rate, offer acceptance, incremental retention, and cost per retained customer.
+- Compare intervention outcomes with a control group before scaling retention initiatives.
+
+## Limitations
+
+The dataset contains customer, contract, service, and billing information. It does not include actual complaint records, customer contacts, response times, service incidents, or CSAT survey results.
+
+Consequently, the project does not establish direct causal relationships between customer service experience and churn. Additional operational data would be needed to investigate those relationships.
+
+Model results depend on the dataset, data quality, and evaluation methodology. Retention effectiveness must be validated through a controlled pilot.
+
+## Tools & Technologies
+
+- Python
+- Pandas and NumPy
+- Matplotlib
+- Scikit-learn
+- Jupyter Notebook
+- Machine Learning
+- Predictive Analytics
+- Customer Retention Analytics
+
+## Project Outcome
+
+This project demonstrates how predictive modeling can support customer risk segmentation and the design of measurable retention strategies. It connects model evaluation with business decision-making and Customer Experience improvement opportunities.
